@@ -1,9 +1,8 @@
 <!doctype html>
 <html>
     <head>
-	<!-- Loads <model-viewer> for modern browsers: -->
+	<!-- <model-viewer> のスクリプトを読み込みます -->
 	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-	<!-- Loads <model-viewer> for old browsers like IE11: -->
 	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     </head>
 
@@ -17,14 +16,13 @@
             embedded
             gesture-detector
         >
-         <a-entity camera></a-entity>
- 
-	<model-viewer preload poster="assets/asset.jpeg" src="assets/3dmodel.gltf" ios-src="assets/3dmodel.usdz" 
-		      auto-rotate camera-controls ar alt="サンプル"></model-viewer>	
 		
+        <a-entity camera></a-entity>
+ 
+	<model-viewer preload poster="assets/asset.jpeg" 
+		      src="assets/3dmodel.gltf" ios-src="assets/3dmodel.usdz" 
+         auto-rotate camera-controls ar alt="サンプル"></model-viewer>	
 
-            </a-marker>　
-	
-        </a-scene>
+	</a-scene>
     </body>
 </html>
