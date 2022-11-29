@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <!--media pipe: 手の骨格取得や認識結果の描画に使用-->
-<!--  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>  -->
-  <script src="./Camera.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+
   
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915/hands.js" crossorigin="anonymous"></script>
@@ -145,39 +145,6 @@
       canvasCtx.drawImage(beam, -beam.width/2.0, 0, beam.width, beam.height);      
     }
   </script>
- 
-<script type="module">
-import { Camera } from "./Camera.js";
-
-let camera = null;
-
-btnstart.onclick = async () => {
-  if (camera) {
-    await camera.stop();
-  }
-  camera = new Camera(video, {
-    onFrame: async () => {
-      // use video element as image
-    },
-    backcamera: chkback.checked,
-    fps: 1,
-  });
-  await camera.start();
-};
-btnstop.onclick = async () => {
-  if (camera) {
-    await camera.stop();
-    camera = null;
-  }
-};
-chkback.onchange = async () => {
-  if (camera) {
-    await camera.flip();
-  }
-}
-</script>
-  
-  
   
 </head>
 
